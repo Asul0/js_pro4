@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Style Delayed</title>
+    <style>
+        #myElement {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="myElement">Hello</div>
+    <script>
+        function changeStyleDelayed(elementId, delay) {
+            setTimeout(() => {
+                const element = document.getElementById(elementId);
+                if (element) {
+                    // Пример изменения стиля: изменение цвета фона и текста
+                    element.style.backgroundColor = 'yellow';
+                    element.style.color = 'red';
+                } else {
+                    console.log(`Element with ID ${elementId} not found`);
+                }
+            }, delay);
+        }
+
+        // Пример использования:
+        changeStyleDelayed('myElement', 2000); // Через 2 секунды изменяет стиль элемента с id 'myElement'
+    </script>
+</body>
+</html>
